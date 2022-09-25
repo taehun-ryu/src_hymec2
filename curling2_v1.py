@@ -9,6 +9,10 @@ import math
 # ser = serial.Serial(port,baud)
 
 ######################
+stone_centerX = None
+stone_centerY = None
+goal_centerX = None
+goal_centerY = None
 sx = None
 sy = None
 sw = None
@@ -119,7 +123,7 @@ settingGoal_bar()
 settingStone_bar()
 
 
-cap = cv2.VideoCapture(0)               # 0번 카메라 장치 연결 ---①
+cap = cv2.VideoCapture(2,cv2.CAP_V4L2)   # Window: 0 or 1 , Ubuntu: 2
 
 if cap.isOpened():                      # 캡쳐 객체 연결 확인
 
